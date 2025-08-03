@@ -212,7 +212,10 @@ console.log("cart page script loaded.");
         loadCart();
       }
     }
-
+function getcartcount() {
+const cart = JSON.parse(localstorage.getItem("cart")) || [];
+return cart.length;
+}
     window.onload = loadCart;
   </script>
 </body>
