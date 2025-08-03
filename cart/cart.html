@@ -207,7 +207,7 @@ console.log("cart page script loaded.");
     }
 
     function clearCart() {
-      if (confirm("This will remove all items. Continue?")) {
+      if (confirm("Are you sure you want to clear your entire cart? This action cannot be undone.")) {
         localStorage.removeItem("cart");
         loadCart();
       }
