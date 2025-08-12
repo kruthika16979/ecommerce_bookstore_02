@@ -29,10 +29,9 @@
         
         <button onclick="placeOrder()">Place Order</button>
     </div>
-
     <script>
         function placeOrder() {
-            alert("Order placed successfully! Thank you for shopping.");
+            alert("please complete all checkout details before placing orders.");
             localStorage.removeItem("cart");
             window.location.href = "index.html";
         }
