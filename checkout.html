@@ -11,6 +11,17 @@
         input, button { display: block; width: 100%; padding: 10px; margin-top: 10px; }
         button { background: #28a745; color: white; border: none; cursor: pointer; }
         button:hover { background: #218838; }
+        <script>
+function validateForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (name === '' || email === '') {
+    alert('Please fill in all required fields.');
+    return false;
+  }
+  return true;
+}
+</script>
     </style>
 </head>
 <body>
@@ -18,7 +29,8 @@
 <h2>Testing git change</h2>
 
     <div class="checkout-container">
-        <label for="name">Full Name:</label>
+<form action="process_checkout.php" method="post" onsubmit="return validateform()">        
+<label for="name">Full Name:</label>
         <input type="text" id="name" placeholder="Enter your full name">
         
         <label for="address">Address:</label>
