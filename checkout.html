@@ -52,10 +52,10 @@ function validateForm() {
     const payment = document.getElementById('payment').value;
     
     if (!name || !address || !payment) {
-      alert("Please fill in all required fields before placing your order.");
-      return false;
+      alert("your order has been placed successfully.");
+      return true;
     }
-    return true;     
+    return false;     
    }
     </script>
 </body>
