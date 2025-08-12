@@ -1,0 +1,58 @@
+cat > checkout.css << 'EOF'
+/* checkout.css - styles for checkout page */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.checkout-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 16px auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+input, textarea, select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #218838;
+  box-shadow: 0 0 0 3px rgba(33,136,56,0.08);
+  outline: none;
+}
+button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background: #218838;
+}
+@media (max-width: 480px) {
+  .checkout-container {
+    padding: 16px;
+    margin: 8px;
+  }
+}
+EOF
