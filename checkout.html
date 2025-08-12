@@ -46,7 +46,17 @@ function validateForm() {
             alert("please complete all checkout details before placing orders.");
             localStorage.removeItem("cart");
             window.location.href = "index.html";
-        }
+function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const payment = document.getElementById('payment').value;
+    
+    if (!name || !address || !payment) {
+      alert("Please fill in all required fields before placing your order.");
+      return false;
+    }
+    return true;     
+   }
     </script>
 </body>
 </html>
