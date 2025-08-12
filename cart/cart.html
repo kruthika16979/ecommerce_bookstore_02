@@ -159,6 +159,7 @@
   </footer>
 
   <script>
+console.log("cart page script loaded.");
     function loadCart() {
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
       const cartList = document.getElementById("cartItems");
@@ -169,6 +170,7 @@
 
       if (cart.length === 0) {
         cartList.innerHTML = '<p class="empty-msg">Your cart is empty.</p>';
+        alert("your cart is empty!");
         return;
       }
 
@@ -201,18 +203,22 @@
       if (confirm("Are you sure you want to remove this item?")) {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         cart.splice(index, 1);
+        console.log("Item removed at index: " + index);
         localStorage.setItem("cart", JSON.stringify(cart));
         loadCart();
       }
     }
 
     function clearCart() {
-      if (confirm("This will remove all items. Continue?")) {
+      if (confirm("Are you sure you want to clear your entire cart? This action cannot be undone.")) {
         localStorage.removeItem("cart");
         loadCart();
       }
     }
-
+function getcartcount() {
+const cart = JSON.parse(localstorage.getItem("cart")) || [];
+return cart.length;
+}
     window.onload = loadCart;
   </script>
 </body>
