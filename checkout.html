@@ -98,3 +98,28 @@ function validateForm() {
   </form>
 </section>
  cart-readme
+<script>
+// cart.js - basic checkout functionality
+document.addEventListener("DOMContentLoaded", function () {
+    const checkoutForm = document.querySelector("#checkout-form");
+    
+    if (checkoutForm) {
+        checkoutForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.querySelector("#name").value.trim();
+            const address = document.querySelector("#address").value.trim();
+            const payment = document.querySelector("#payment").value;
+
+            if (!name || !address || !payment) {
+                alert("Please fill in all required fields before placing your order.");
+                return;
+            }
+
+            alert("Order placed successfully! Thank you, " + name + ".");
+            checkoutForm.reset();
+        });
+    }
+});
+</script>
+cart-js
