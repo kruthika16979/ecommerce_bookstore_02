@@ -29,7 +29,10 @@
                     alert("Please fill in all required fields before placing your order.");
                     return;
                 }
-
+if (name.length < 3) {
+    alert("Name must be at least 3 characters.");
+    return;
+}
                 alert("Order placed successfully! Thank you, " + name + ".");
                 checkoutForm.reset();
             });
