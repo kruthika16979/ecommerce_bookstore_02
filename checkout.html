@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Checkout</title>
+    <title>Checkout</title>
 </head>
 <body>
-  <h1>Checkout Page</h1>
-  <script src="cart.js">
- cart.js - basic checkout functionality
-document.addEventListener("DOMContentLoaded", function () {
-    const checkoutForm = document.querySelector("#checkout-form");
-    
-    if (checkoutForm) {
-        checkoutForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+    <h1>Checkout Page</h1>
+    <form id="checkout-form">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="address" placeholder="Address">
+        <input type="text" id="payment" placeholder="Payment Details">
+        <button type="submit">Place Order</button>
+    </form>
 
-            const name = document.querySelector("#name").value.trim();
-            const address = document.querySelector("#address").value.trim();
-            const payment = document.querySelector("#payment").value;
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkoutForm = document.querySelector("#checkout-form");
 
-            if (!name || !address || !payment) {
-                alert("Please fill in all required fields before placing your order.");
-                return;
-            }
+        if (checkoutForm) {
+            checkoutForm.addEventListener("submit", function (event) {
+                event.preventDefault();
 
-            alert("Order placed successfully! Thank you, " + name + ".");
-            checkoutForm.reset();
-        });
-    }
-});
-</script>
+                const name = document.querySelector("#name").value.trim();
+                const address = document.querySelector("#address").value.trim();
+                const payment = document.querySelector("#payment").value.trim();
+
+                if (!name || !address || !payment) {
+                    alert("Please fill in all required fields before placing your order.");
+                    return;
+                }
+
+                alert("Order placed successfully! Thank you, " + name + ".");
+                checkoutForm.reset();
+            });
+        }
+    });
+    </script>
 </body>
 </html>
