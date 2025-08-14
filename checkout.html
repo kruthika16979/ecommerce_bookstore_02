@@ -19,7 +19,7 @@
 <button type="submit">Place Order</button>
     </form>
 <input type="email" id="email" placeholder="Email">
-<input type="tel" id="phone" placeholder="Phone Number">
+<input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" title="Enter exactly 10 digits">
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const checkoutForm = document.querySelector("#checkout-form");
